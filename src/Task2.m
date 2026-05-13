@@ -1,0 +1,11 @@
+clear; clc;
+N = 10000;
+cars = randi([1, 3], 1, N);
+choices = randi([1, 3], 1, N);
+stay_wins = sum(choices == cars);
+switch_wins = sum(choices ~= cars);
+stay_rate = stay_wins / N;
+switch_rate = switch_wins / N;
+disp('Monty Hall');
+fprintf('Win rate if you stay: %.4f (%.2f%%)\n', stay_rate, stay_rate * 100);
+fprintf('Win rate if you switch: %4f (%.2f%%)\n', switch_rate, switch_rate * 100);
